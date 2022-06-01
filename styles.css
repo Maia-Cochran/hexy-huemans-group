@@ -1,18 +1,17 @@
+/* * {
+  border: 1px solid purple;
+} */
+
+body {
+  font-family: 'Roboto Condensed', sans-serif;
+  display: flex;
+  height: 100%;
+}
 
 h1 {
-
   font-family: 'Bowlby One SC', cursive;
   font-size: 64pt;
   text-align: center;
-}
-
-body, :not(:h2) {
-  font-family: 'Roboto Condensed', sans-serif;
-  display: inline-block;
-}
-
-.box {
-  display: inline-block;
 }
 
 h2 {
@@ -21,40 +20,75 @@ h2 {
   text-align: center;
 }
 
+
+.main-container {
+  width: 70%;
+  height: auto;
+}
+
 .trashBin {
-  display: flex;
   width: 25%;
   height: auto;
 }
 
 .view-new-swatch {
   display: flex;
-  align-items: center;
-  align-content: center;
-  justify-content: space-between;
+  justify-content: space-evenly;
   margin: auto;
-  border: black solid;
-  border-width: thin;
   width: auto;
   height: auto;
-  padding: 40px;
 }
 
 .swatchDisplayContainer{
-    flex-direction: column;
-
-    border: solid black;
-    padding: 20px;
+  display: flex;
+  flex-direction: column;
+  height: 200px;
+  width: 175px;
 }
 
-.button-container {
+.large-swatch {
+  background-color: pink;
+  border: dotted 12px grey;
+  height: 70%;
+  width: auto;
+}
+
+.hex-lock {
+  display: flex;
+  flex-direction: column;
   justify-content: center;
+  align-items: center;
+  font-size: 18pt;
+  height: 30%;
+  width: auto;
+}
+
+#swatch1 {
+  background-color: blueviolet;
+}
+
+#swatch2 {
+  background-color: blue;
+}
+
+#swatch3 {
+  background-color: lightgreen;
+}
+
+#swatch4 {
+  background-color: pink;
+}
+
+#swatch5 {
+  background-color: lightyellow;
+}
+
+
+.button-container {
+  display: flex;
+  justify-content: space-evenly;
   align-content: center;
   align-items: center;
-  margin: auto;
-  border: solid;
-  border-width: thin;
-  border-color: black;
   width: auto;
   padding: 40px;
   text-align: center;
@@ -62,18 +96,23 @@ h2 {
 
 button {
   background-color: seagreen;
-  padding: 40px;
+  background-image: linear-gradient(-40deg, purple, blue,  lightyellow, lightblue, magenta, blueviolet, pink, lightgreen);
+  padding: 12px;
   font-size: 20px;
-  color: aliceblue;
+  color: black;
+  text-decoration: white;
   border-radius: 4px;
+  height: auto;
+  width: auto;
   box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px, rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
 }
 
 aside {
   display: flex;
+  flex-direction: column;
   border: black solid;
   border-width: thin;
-  width: auto
+  width: 30%;
   height: auto;
   padding: 40px;
 }

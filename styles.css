@@ -1,0 +1,79 @@
+
+h1 {
+
+  font-family: 'Bowlby One SC', cursive;
+  font-size: 64pt;
+  text-align: center;
+}
+
+body, :not(:h2) {
+  font-family: 'Roboto Condensed', sans-serif;
+  display: inline-block;
+}
+
+.box {
+  display: inline-block;
+}
+
+h2 {
+  font-family: 'Bowlby One SC', cursive;
+  font-size: 40pt;
+  text-align: center;
+}
+
+.trashBin {
+  display: flex;
+  width: 25%;
+  height: auto;
+}
+
+.view-new-swatch {
+  display: flex;
+  align-items: center;
+  align-content: center;
+  justify-content: space-between;
+  margin: auto;
+  border: black solid;
+  border-width: thin;
+  width: auto;
+  height: auto;
+  padding: 40px;
+}
+
+.swatchDisplayContainer{
+    flex-direction: column;
+
+    border: solid black;
+    padding: 20px;
+}
+
+.button-container {
+  justify-content: center;
+  align-content: center;
+  align-items: center;
+  margin: auto;
+  border: solid;
+  border-width: thin;
+  border-color: black;
+  width: auto;
+  padding: 40px;
+  text-align: center;
+}
+
+button {
+  background-color: seagreen;
+  padding: 40px;
+  font-size: 20px;
+  color: aliceblue;
+  border-radius: 4px;
+  box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px, rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
+}
+
+aside {
+  display: flex;
+  border: black solid;
+  border-width: thin;
+  width: auto
+  height: auto;
+  padding: 40px;
+}

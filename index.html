@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+  <html lang="en">
+    <meta charset="utf-8">
+    <head>
+      <link rel="stylesheet" href="./styles.css">
+      <meta name="viewport" content="width=device-width, initial-scale=1">
+      <link rel="preconnect" href="https://fonts.googleapis.com">
+      <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+      <link href="https://fonts.googleapis.com/css2?family=Bowlby+One+SC&family=Roboto+Condensed:wght@300&display=swap" rel="stylesheet">
+      <title>Hexy-Hueman's Guide to Colors</title>
+    </head>
+
+    <body>
+      <main class="box main-container">
+<!-- First block with main title -->
+
+        <section class="title-container">
+          <h1><strong>COLORANDOM</strong></h1>
+        </section>
+<!-- Second block with main swatch display, hex number, lock -->
+        <section class="view-new-swatch">
+          <section class="swatchDisplayContainer" name="swatch1">
+            <section class="large-swatch"></section>
+            <section class="hexNumber"></section>
+            <section class="lock-unlock"></section>
+          </section>
+          <section class="swatchDisplayContainer" name="swatch2">
+            <section class="large-swatch"></section>
+            <section class="hexNumber"></section>
+            <section class="lock-unlock"></section>
+          </section>
+          <section class="swatchDisplayContainer" name="swatch3">
+            <section class="large-swatch"></section>
+            <section class="hexNumber"></section>
+            <section class="lock-unlock"></section>
+          </section>
+          <section class="swatchDisplayContainer" name="swatch4">
+            <section class="large-swatch"></section>
+            <section class="hexNumber"></section>
+            <section class="lock-unlock"></section>
+          </section>
+          <section class="swatchDisplayContainer" name="swatch5">
+            <section class="large-swatch"></section>
+            <section class="hexNumber"></section>
+            <section class="lock-unlock"></section>
+          </section>
+        </section>
+<!-- Third block with 2 buttons (New Palette and Save Palette)         -->
+        <section class="button-container">
+          <button type="button" name="new-palette-button">New Palette</button>
+          <span style="display:inline-block;margin-left:300px"></span>
+          <button type="button" name="save-palette-button">Save Palette</button>
+        </section>
+
+      </main>
+
+<!-- Side block with saved palettes -->
+      <aside class="box saved-display-container">
+<!-- First block with Saved Palette title         -->
+          <section class="title-saved-palette-container">
+            <h2>Saved Palettes</h2>
+          </section>
+
+<!-- Container for saved palettes           -->
+          <section class="saved-palettes-section">
+<!-- Section with individual saved palette and delete image; this will be added each time user saves a palette       -->
+            <section class="container-saved-palettes">
+<!-- container with small swatch cards -->
+              <section class="saved-pallette">
+<!-- individual swatches in the saved palette                 -->
+                <section class="swatch-small"></section>
+              </section>
+<!-- container with delete image               -->
+              <section class="container-delete">
+                <img class="trashBin" src="assets/trashimg.svg" alt="delete icon">
+              </section>
+            </section>
+          </section>
+      </aside>
+
+    </body>
+</html>

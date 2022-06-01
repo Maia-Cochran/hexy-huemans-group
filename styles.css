@@ -28,15 +28,23 @@ h2 {
 }
 
 .view-new-swatch {
+  display: flex;
   align-items: center;
   align-content: center;
-  justify-content: center;
+  justify-content: space-between;
   margin: auto;
   border: black solid;
   border-width: thin;
   width: auto;
   height: auto;
   padding: 40px;
+}
+
+.swatchDisplayContainer{
+    flex-direction: column;
+
+    border: solid black;
+    padding: 20px;
 }
 
 .button-container {

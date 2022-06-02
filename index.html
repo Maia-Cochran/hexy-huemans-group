@@ -11,7 +11,7 @@
     </head>
 
     <body>
-      <main class="box main-container">
+      <main class="main-container">
 <!-- First block with main title -->
 
         <section class="title-container">
@@ -19,48 +19,60 @@
         </section>
 <!-- Second block with main swatch display, hex number, lock -->
         <section class="view-new-swatch">
-          <section class="swatchDisplayContainer" name="swatch1">
-            <section class="large-swatch"></section>
-            <section class="hexNumber"></section>
-            <section class="lock-unlock"></section>
+          <section class="swatchDisplayContainer">
+            <section class="large-swatch" id="swatch1"></section>
+            <section class="hex-lock" id="hex-lock1">#ffffff
+              <img class="view-open-lock" src="assets/open-lock.svg" alt="unlock icon">
+              <img class="view-lock hidden" src="assets/lock.svg" alt="unlock icon">
+            </section>
           </section>
-          <section class="swatchDisplayContainer" name="swatch2">
-            <section class="large-swatch"></section>
-            <section class="hexNumber"></section>
-            <section class="lock-unlock"></section>
+          <section class="swatchDisplayContainer">
+            <section class="large-swatch" id="swatch2"></section>
+            <section class="hex-lock" id="hex-lock2">#ffffff
+              <img class="view-open-lock" src="assets/open-lock.svg" alt="unlock icon">
+              <img class="view-lock hidden" src="assets/lock.svg" alt="unlock icon">
+            </section>
           </section>
-          <section class="swatchDisplayContainer" name="swatch3">
-            <section class="large-swatch"></section>
-            <section class="hexNumber"></section>
-            <section class="lock-unlock"></section>
+          <section class="swatchDisplayContainer">
+            <section class="large-swatch" id="swatch3"></section>
+            <section class="hex-lock" id="hex-lock3">#ffffff
+              <img class="view-open-lock" src="assets/open-lock.svg" alt="unlock icon">
+              <img class="view-lock hidden" src="assets/lock.svg" alt="unlock icon">
+            </section>
           </section>
-          <section class="swatchDisplayContainer" name="swatch4">
-            <section class="large-swatch"></section>
-            <section class="hexNumber"></section>
-            <section class="lock-unlock"></section>
+          <section class="swatchDisplayContainer">
+            <section class="large-swatch" id="swatch4"></section>
+            <section class="hex-lock" id="hex-lock4">#ffffff
+              <img class="view-open-lock" src="assets/open-lock.svg" alt="unlock icon">
+              <img class="view-lock hidden" src="assets/lock.svg" alt="unlock icon">
+            </section>
           </section>
-          <section class="swatchDisplayContainer" name="swatch5">
-            <section class="large-swatch"></section>
-            <section class="hexNumber"></section>
-            <section class="lock-unlock"></section>
+          <section class="swatchDisplayContainer">
+            <section class="large-swatch" id="swatch5"></section>
+            <section class="hex-lock" id="hex-lock5">#ffffff
+              <img class="view-open-lock" src="assets/open-lock.svg" alt="unlock icon">
+              <img class="view-lock hidden" src="assets/lock.svg" alt="unlock icon">
+            </section>
           </section>
         </section>
 <!-- Third block with 2 buttons (New Palette and Save Palette)         -->
         <section class="button-container">
-<<<<<<< Updated upstream
-          <button type="button" name="new-palette-button">New Palette</button>
-          <span style="display:inline-block;margin-left:300px"></span>
-          <button type="button" name="save-palette-button">Save Palette</button>
-=======
-          <p><button type="button" class="new-palette-button">New Palette</button></p>
+          <p><button type="button" name="new-palette-button">New Palette</button></p>
           <p><button type="button" name="save-palette-button">Save Palette</button></p>
->>>>>>> Stashed changes
         </section>
-
+      </section>
       </main>
 
+<!-- Container for divider between main and aside sections -->
+<section class="container">
+  <div class="roller">
+    <div class="handle"></div>
+  </div>
+  <div class="paint"></div>
+</section>
+
 <!-- Side block with saved palettes -->
-      <aside class="box saved-display-container">
+      <aside class="saved-display-container">
 <!-- First block with Saved Palette title         -->
           <section class="title-saved-palette-container">
             <h2>Saved Palettes</h2>
@@ -82,6 +94,8 @@
             </section>
           </section>
       </aside>
-      <script src="./src/main.js"></script>
+      <script src="./scripts.js"></script>
+      <script src="./palette.js"></script>
+      <script src="./color.js"></script>
     </body>
 </html>

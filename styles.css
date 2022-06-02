@@ -139,7 +139,7 @@ button {
   height: 350px;
   width: 350px;
   position: absolute;
-  top: 95%;
+  top: 20%;
   left: 67.03%;
   transform: translate(-50%, -50%);
 }
@@ -157,11 +157,11 @@ button {
   left: 0;
   right: 0;
   top: 0;
-  animation: roller 4s infinite;
+  animation: roller 10s infinite;
 }
 @keyframes roller{
   40%{
-    top: 165px;
+    top: 800px;
   }
 }
 
@@ -215,11 +215,11 @@ button {
   left: 0;
   right: 0;
   z-index: -1;
-  animation: paint 4s infinite;
+  animation: paint 10s infinite;
 }
 @keyframes paint{
   40%{
-    height: 165px;
+    height: 800px;
   }
 }
 

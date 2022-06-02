@@ -1,3 +1,4 @@
+
 class Color {
   constructor() {
     this.id = Date.now();
@@ -15,4 +16,6 @@ function getRandomHex() {
         }
     return color;
   }
-}
+
+
+

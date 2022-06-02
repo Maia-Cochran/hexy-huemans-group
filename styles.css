@@ -27,7 +27,26 @@ h2 {
   height: auto;
 }
 
+<<<<<<< Updated upstream
 .view-new-swatch {
+=======
+.swatchDisplayContainer{
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  height: 200px;
+  width: 175px;
+}
+
+.large-swatch {
+  border: dotted 4px grey;
+  border-radius: 12px;
+  height: 70%;
+  width: auto;
+}
+
+.hex-lock {
+>>>>>>> Stashed changes
   display: flex;
   align-items: center;
   align-content: center;
@@ -40,8 +59,37 @@ h2 {
   padding: 40px;
 }
 
+<<<<<<< Updated upstream
 .swatchDisplayContainer{
     flex-direction: column;
+=======
+ 👇🏼 5 large color swatches in main section
+#swatch1 {
+  background-color: blueviolet;
+  box-shadow: rgb(38, 57, 77) 0px 20px 30px -10px;
+}
+#swatch2 {
+  background-color: blue;
+  box-shadow: rgb(38, 57, 77) 0px 20px 30px -10px;
+}
+#swatch3 {
+  background-color: lightgreen;
+  box-shadow: rgb(38, 57, 77) 0px 20px 30px -10px;
+}
+#swatch4 {
+  background-color: pink;
+  box-shadow: rgb(38, 57, 77) 0px 20px 30px -10px;
+}
+#swatch5 {
+  background-color: lightyellow;
+  box-shadow: rgb(38, 57, 77) 0px 20px 30px -10px;
+}
+
+
+.hidden{
+  display: none;
+}
+>>>>>>> Stashed changes
 
     border: solid black;
     padding: 20px;

@@ -1,34 +1,48 @@
-/* * {
-  border: 1px solid purple;
-} */
-
 body {
   font-family: 'Roboto Condensed', sans-serif;
   display: flex;
   height: 100%;
 }
 
-h1 {
-  font-family: 'Bowlby One SC', cursive;
-  font-size: 64pt;
-  text-align: center;
-}
-
-h2 {
-  font-family: 'Bowlby One SC', cursive;
-  font-size: 40pt;
-  text-align: center;
-}
-
-
 .main-container {
   width: 70%;
-  height: auto;
+  height: 100%;
+  padding: 40px;
 }
 
-.trashBin {
-  width: 25%;
-  height: auto;
+h1 {
+  font-family: 'Bowlby One SC', cursive;
+  background: linear-gradient(
+      #00f5d4,
+      #00bbf9,
+      #fee440,
+      #f15bb5,
+      #9b5de5
+    );
+  width: auto;
+  margin: 10;
+  font-size: 64pt;
+  text-align: center;
+  box-shadow: rgb(38, 57, 77) 0px 20px 30px -10px;
+}
+
+.title-saved-palette-container {
+  padding-top: 30px;
+}
+h2 {
+  font-family: 'Bowlby One SC', cursive;
+  font-size: 38pt;
+  padding-top: 25px;
+  padding-bottom: 25px;
+  text-align: center;
+  background: linear-gradient(
+      #00f5d4,
+      #00bbf9,
+      #fee440,
+      #f15bb5,
+      #9b5de5
+    );
+    box-shadow: rgb(38, 57, 77) 0px 20px 30px -10px;
 }
 
 .view-new-swatch {
@@ -37,52 +51,65 @@ h2 {
   margin: auto;
   width: auto;
   height: auto;
+  padding: 20px;
 }
 
 .swatchDisplayContainer{
   display: flex;
   flex-direction: column;
+  justify-content: space-around;
   height: 200px;
   width: 175px;
 }
 
 .large-swatch {
   background-color: pink;
-  border: dotted 12px grey;
+  border: dotted 4px grey;
+  border-radius: 12px;
   height: 70%;
   width: auto;
 }
 
 .hex-lock {
   display: flex;
-  flex-direction: column;
   justify-content: center;
+  gap: 15px;
   align-items: center;
   font-size: 18pt;
   height: 30%;
   width: auto;
 }
 
+/* 👇🏼 5 large color swatches in main section */
 #swatch1 {
   background-color: blueviolet;
+  box-shadow: rgb(38, 57, 77) 0px 20px 30px -10px;
 }
-
 #swatch2 {
   background-color: blue;
+  box-shadow: rgb(38, 57, 77) 0px 20px 30px -10px;
 }
-
 #swatch3 {
   background-color: lightgreen;
+  box-shadow: rgb(38, 57, 77) 0px 20px 30px -10px;
 }
-
 #swatch4 {
   background-color: pink;
+  box-shadow: rgb(38, 57, 77) 0px 20px 30px -10px;
 }
-
 #swatch5 {
   background-color: lightyellow;
+  box-shadow: rgb(38, 57, 77) 0px 20px 30px -10px;
 }
 
+.hidden{
+  display: none;
+}
+
+img {
+  height: 55%;
+  width: auto;
+}
 
 .button-container {
   display: flex;
@@ -90,14 +117,14 @@ h2 {
   align-content: center;
   align-items: center;
   width: auto;
-  padding: 40px;
+  padding: 80px;
   text-align: center;
 }
 
 button {
   background-color: seagreen;
   background-image: linear-gradient(-40deg, purple, blue,  lightyellow, lightblue, magenta, blueviolet, pink, lightgreen);
-  padding: 12px;
+  padding: 18px;
   font-size: 20px;
   color: black;
   text-decoration: white;
@@ -107,12 +134,107 @@ button {
   box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px, rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
 }
 
+/* 👇🏼 Code for animation of paintbrush border */
+.container{
+  height: 350px;
+  width: 350px;
+  position: absolute;
+  top: 95%;
+  left: 67.03%;
+  transform: translate(-50%, -50%);
+}
+.roller{
+  height: 30px;
+  width: 100px;
+  border: 5px solid #040e15;
+  border-radius: 7px;
+  background: linear-gradient(
+    darkcyan 80%,
+    darkgrey
+    );
+  position: absolute;
+  margin: auto;
+  left: 0;
+  right: 0;
+  top: 0;
+  animation: roller 4s infinite;
+}
+@keyframes roller{
+  40%{
+    top: 165px;
+  }
+}
+
+.roller:before{
+  position: absolute;
+  content: "";
+  background-color: rgba(255,255,255,0.7);
+  height: 7px;
+  width: 65px;
+  top: 6px;
+  left: 6px;
+  border-radius: 10px;
+}
+
+.roller:after{
+  position: absolute;
+  content: "";
+  height: 40px;
+  width: 75px;
+  border: 7px solid #040e15;
+  border-left: none;
+  right: -20px;
+  top: 10px;
+  z-index: -1;
+  border-radius: 7px;
+}
+.handle{
+  height: 30px;
+  width: 7px;
+  background-color: #040e15;
+  position: absolute;
+  top: 60px;
+  right: 55px;
+}
+.handle:after{
+  position: absolute;
+  content: "";
+  height: 75px;
+  width: 25px;
+  background-color: #040e15;
+  bottom: -75px;
+  right: -8px;
+  border-radius: 5px;
+}
+.paint{
+  background-color: darkcyan;
+  height: 0;
+  width: 90px;
+  position: absolute;
+  margin: auto;
+  left: 0;
+  right: 0;
+  z-index: -1;
+  animation: paint 4s infinite;
+}
+@keyframes paint{
+  40%{
+    height: 165px;
+  }
+}
+
+/* 👇🏼 Aside section with saved palettes */
 aside {
   display: flex;
   flex-direction: column;
-  border: black solid;
-  border-width: thin;
+  border-left: solid darkcyan;
+  border-width: 90px;
   width: 30%;
   height: auto;
   padding: 40px;
+}
+
+.trashBin {
+  width: 10%;
+  height: auto;
 }

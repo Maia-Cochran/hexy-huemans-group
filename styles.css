@@ -82,23 +82,23 @@ h2 {
 
 /* 👇🏼 5 large color swatches in main section */
 #swatch1 {
-  background-color: blueviolet;
+  background: blueviolet;
   box-shadow: rgb(38, 57, 77) 0px 20px 30px -10px;
 }
 #swatch2 {
-  background-color: blue;
+  background: blue;
   box-shadow: rgb(38, 57, 77) 0px 20px 30px -10px;
 }
 #swatch3 {
-  background-color: lightgreen;
+  background: lightgreen;
   box-shadow: rgb(38, 57, 77) 0px 20px 30px -10px;
 }
 #swatch4 {
-  background-color: pink;
+  background: pink;
   box-shadow: rgb(38, 57, 77) 0px 20px 30px -10px;
 }
 #swatch5 {
-  background-color: lightyellow;
+  background: lightyellow;
   box-shadow: rgb(38, 57, 77) 0px 20px 30px -10px;
 }
 
@@ -159,7 +159,7 @@ button {
   top: 0;
   animation: roller 10s infinite;
 }
-@keyframes roller{
+@keyframes roller {
   40%{
     top: 800px;
   }

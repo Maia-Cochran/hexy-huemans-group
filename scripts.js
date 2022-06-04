@@ -1,98 +1,77 @@
-//global variables
-class Color {
-  constructor() {
-    //this.id = Date.now();
-    this.hexCode = this.getRandomHex();
-    this.isLocked = false;
+lass Colour {
+  constructor(hex, element) {
+    this.hex = hex;
+    this.element = element;
+    this.locked = false;
   }
 
-  getRandomHex() {
-    var letters = ['0','1','2','3','4','5','6','7','8','9','A','B','C','D','E','F'];
-    var color = '#';
-    for (var i = 0; i < 6; i++) {
-          color += letters[Math.floor(Math.random() * letters.length)];
-        }
-    return color;
-  }
-}
-
-
-class Palette {
-  constructor() {
-    this.colors = this.createColors();
-    this.id = Date.now();
+  setHex(hex) {
+    this.hex = hex;
+    this.element.style.backgroundColor = hex;
+    this.element.querySelector(".colour-input").value = hex;
   }
 
-  createColors(){
-    var colours = [];
-    for (var i = 0; i <= 4; i++){
-    colours.push(new Color());
-  }
-  return colours
-}
-
-  checkLock() {
-    for(var i = 0; i <= 4; i++) {
-      if (!this.colors[i].isLocked) {
-        this.colors.splice(i, 1, new Color());
-      }
-      this.colors[i].hexCode = `${i}`;
+  setLocked(locked) {
+    this.locked = locked;
+    if (locked) {
+      this.element.querySelector(".lock-toggle").classList.add("is-locked");
+      this.element.querySelector("img").src = "assets/lock.svg";
+    } else {
+      this.element.querySelector(".lock-toggle").classList.remove("is-locked");
+      this.element.querySelector("img").src = "assets/open-lock.svg";
     }
   }
+
+  toggleLocked() {
+    this.setLocked(!this.locked);
+  }
+
+  generateHex() {
+    if (this.locked) {
+      return
+    }
+
+    var chars = "0123456789ABCDEF";
+      var color = "#";
+      for (var i = 0; i < 6; i++) {
+        color += chars[Math.floor(Math.random() * 16)];
+    }
+
+    this.setHex(color);
+  }
 }
 
-var currentPalette = new Palette();
-var savedPalette = [];
-console.log(currentPalette);
-//querySelectors
-var newPaletteButton = document.querySelector('.new-palette-button');
-var hex1 = document.querySelector('.hex-lock-1');
-var hex2 = document.querySelector('.hex-lock-2');
-var hex3 = document.querySelector('.hex-lock-3');
-var hex4 = document.querySelector('.hex-lock-4');
-var hex5 = document.querySelector('.hex-lock-5');
+var colour_elements = document.querySelectorAll('.colours .colour');
 
-var largeSwatch1 = document.querySelector('.large-swatch-1');
-var largeSwatch2 = document.querySelector('.large-swatch-2');
-var largeSwatch3 = document.querySelector('.large-swatch-3');
-var largeSwatch4 = document.querySelector('.large-swatch-4');
-var largeSwatch5 = document.querySelector('.large-swatch-5');
+var colours = [];
 
-//event listener
+for (var i=0; i < colour_elements.length; i++) {
+  var colour_element = colour_elements[i];
 
-window.addEventListener('load', generateRandomColors);
-newPaletteButton.addEventListener('click', generateRandomColors);
+  var input = colour_element.querySelector(".colour-input");
+  var lock_toggle = colour_element.querySelector(".lock-toggle");
 
-//data model functions
-// for( i in largeSwatch ) {
-//   largeSwatch[i].style.display = 'none';
-// }
 
-//generate 5 different colors
+  var hex = input.value;
 
-function generateRandomColors() {
-  var color1 = currentPalette.colors[0].hexCode;
-  var color2 = currentPalette.colors[1].hexCode;
-  var color3 = currentPalette.colors[2].hexCode;
-  var color4 = currentPalette.colors[3].hexCode;
-  var color5 = currentPalette.colors[4].hexCode;
-  // currentPalette.checkLock();
-  // console.log('#swatch1');
-  // for (var i = 1; i < 6; i++) {
-  //   var color = getRandomHex();
-  hex1.innerText = color1;
-  largeSwatch1.style.backgroundColor = color1;
-  hex2.innerText = color2;
-  largeSwatch2.style.backgroundColor = color2;
-  hex3.innerText = color3;
-  largeSwatch3.style.backgroundColor = color3;
-  hex4.innerText = color4;
-  largeSwatch4.style.backgroundColor = color4;
-  hex5.innerText = color5;
-  largeSwatch5.style.backgroundColor = color5;
+  const colour = new Colour(hex, colour_element);
+
+  input.addEventListener('input', (e) => colour.setHex(e.target.value));
+  lock_toggle.addEventListener('click', () => colour.toggleLocked());
+
+
+  colour.generateHex();
+  colours.push(colour);
 }
-// }
 
-// function pageLoadRandom(){
-//
-// }
+document.querySelector(".generator-button").addEventListener("click", () => {
+  for (var i=0; i < colours.length; i++) {
+    colours[i].generateHex();
+  }
+});
+
+// document.addEventListener('click', (e) => {
+//     if (e.code.toLowerCase() === "space") {
+//       document.querySelector(".generator-button").click();
+//   }
+// })

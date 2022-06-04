@@ -62,12 +62,44 @@ h2 {
   width: 175px;
 }
 
-.large-swatch {
-  background-color: pink;
+.large-swatch-1 {
   border: dotted 4px grey;
   border-radius: 12px;
   height: 70%;
   width: auto;
+  box-shadow: rgb(38, 57, 77) 0px 20px 30px -10px;
+}
+
+.large-swatch-2 {
+  border: dotted 4px grey;
+  border-radius: 12px;
+  height: 70%;
+  width: auto;
+  box-shadow: rgb(38, 57, 77) 0px 20px 30px -10px;
+}
+
+.large-swatch-3 {
+  border: dotted 4px grey;
+  border-radius: 12px;
+  height: 70%;
+  width: auto;
+  box-shadow: rgb(38, 57, 77) 0px 20px 30px -10px;
+}
+
+.large-swatch-4 {
+  border: dotted 4px grey;
+  border-radius: 12px;
+  height: 70%;
+  width: auto;
+  box-shadow: rgb(38, 57, 77) 0px 20px 30px -10px;
+}
+
+.large-swatch-5 {
+  border: dotted 4px grey;
+  border-radius: 12px;
+  height: 70%;
+  width: auto;
+  box-shadow: rgb(38, 57, 77) 0px 20px 30px -10px;
 }
 
 .hex-lock {
@@ -83,23 +115,20 @@ h2 {
 /* 👇🏼 5 large color swatches in main section */
 #swatch1 {
   background: blueviolet;
-  box-shadow: rgb(38, 57, 77) 0px 20px 30px -10px;
+
 }
-#swatch2 {
-  background: blue;
-  box-shadow: rgb(38, 57, 77) 0px 20px 30px -10px;
-}
+
 #swatch3 {
   background: lightgreen;
-  box-shadow: rgb(38, 57, 77) 0px 20px 30px -10px;
+
 }
 #swatch4 {
   background: pink;
-  box-shadow: rgb(38, 57, 77) 0px 20px 30px -10px;
+
 }
 #swatch5 {
   background: lightyellow;
-  box-shadow: rgb(38, 57, 77) 0px 20px 30px -10px;
+
 }
 
 .hidden{

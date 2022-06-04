@@ -1,3 +1,7 @@
+/* :root {
+  --dark: #1e2f42;
+} */
+
 body {
   font-family: 'Roboto Condensed', sans-serif;
   display: flex;
@@ -101,6 +105,8 @@ input {
 .colour-input {
   text-align: center;
 }
+
+
 
 .button-container {
   display: flex;

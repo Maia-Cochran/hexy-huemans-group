@@ -1,4 +1,4 @@
-lass Colour {
+class Colour {
   constructor(hex, element) {
     this.hex = hex;
     this.element = element;
@@ -31,9 +31,9 @@ lass Colour {
       return
     }
 
-    var chars = "0123456789ABCDEF";
-      var color = "#";
-      for (var i = 0; i < 6; i++) {
+    const chars = "0123456789ABCDEF";
+      let color = "#";
+      for (let i = 0; i < 6; i++) {
         color += chars[Math.floor(Math.random() * 16)];
     }
 
@@ -41,18 +41,18 @@ lass Colour {
   }
 }
 
-var colour_elements = document.querySelectorAll('.colours .colour');
+const colour_elements = document.querySelectorAll('.colours .colour');
 
-var colours = [];
+const colours = [];
 
-for (var i=0; i < colour_elements.length; i++) {
-  var colour_element = colour_elements[i];
+for (let i=0; i < colour_elements.length; i++) {
+  const colour_element = colour_elements[i];
 
-  var input = colour_element.querySelector(".colour-input");
-  var lock_toggle = colour_element.querySelector(".lock-toggle");
+  const input = colour_element.querySelector(".colour-input");
+  const lock_toggle = colour_element.querySelector(".lock-toggle");
 
 
-  var hex = input.value;
+  const hex = input.value;
 
   const colour = new Colour(hex, colour_element);
 
@@ -65,13 +65,13 @@ for (var i=0; i < colour_elements.length; i++) {
 }
 
 document.querySelector(".generator-button").addEventListener("click", () => {
-  for (var i=0; i < colours.length; i++) {
+  for (let i=0; i < colours.length; i++) {
     colours[i].generateHex();
   }
 });
 
-// document.addEventListener('click', (e) => {
-//     if (e.code.toLowerCase() === "space") {
-//       document.querySelector(".generator-button").click();
-//   }
-// })
+document.addEventListener('keypress', (e) => {
+    if (e.code.toLowerCase() === "space") {
+      document.querySelector(".generator-button").click();
+  }
+})

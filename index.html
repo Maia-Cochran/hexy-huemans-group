@@ -2,7 +2,7 @@
   <html lang="en">
     <meta charset="utf-8">
     <head>
-      <link rel="stylesheet" href="./styles.css">
+      <link rel="stylesheet" href="styles.css">
       <meta name="viewport" content="width=device-width, initial-scale=1">
       <link rel="preconnect" href="https://fonts.googleapis.com">
       <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -11,65 +11,63 @@
     </head>
 
     <body>
-      <main class="main-container">
-<!-- First block with main title -->
+      <main>
 
         <section class="title-container">
           <h1>COLORANDOM</h1>
         </section>
-<!-- Second block with main swatch display, hex number, lock -->
-        <section class="view-new-swatch">
-          <section class="swatchDisplayContainer">
-            <section class="large-swatch-1"></section>
-            <section class="hex-lock-1">#ffffff
-              <img class="view-open-lock" src="assets/open-lock.svg" alt="unlock icon">
-              <img class="view-lock hidden" src="assets/lock.svg" alt="unlock icon">
-            </section>
+
+        <section class="colours">
+
+          <section class="colour">
+              <input type="text" class="colour-input" value="#000000" />
+              <button class="lock-toggle">
+                <img src="assets/open-lock.svg"/>
+              </button>
           </section>
-          <section class="swatchDisplayContainer">
-            <section class="large-swatch-2"></section>
-            <section class="hex-lock-2">#ffffff
-              <img class="view-open-lock" src="assets/open-lock.svg" alt="unlock icon">
-              <img class="view-lock hidden" src="assets/lock.svg" alt="unlock icon">
-            </section>
+
+          <section class="colour">
+              <input type="text" class="colour-input" value="#000000" />
+              <button class="lock-toggle">
+                <img src="assets/open-lock.svg"/>
+              </button>
           </section>
-          <section class="swatchDisplayContainer">
-            <section class="large-swatch-3"></section>
-            <section class="hex-lock-3">#ffffff
-              <img class="view-open-lock" src="assets/open-lock.svg" alt="unlock icon">
-              <img class="view-lock hidden" src="assets/lock.svg" alt="unlock icon">
-            </section>
+
+          <section class="colour">
+              <input type="text" class="colour-input" value="#000000" />
+              <button class="lock-toggle">
+                <img src="assets/open-lock.svg"/>
+              </button>
           </section>
-          <section class="swatchDisplayContainer">
-            <section class="large-swatch-4"></section>
-            <section class="hex-lock-4">#ffffff
-              <img class="view-open-lock" src="assets/open-lock.svg" alt="unlock icon">
-              <img class="view-lock hidden" src="assets/lock.svg" alt="unlock icon">
-            </section>
+
+          <section class="colour">
+              <input type="text" class="colour-input" value="#000000" />
+              <button class="lock-toggle">
+                <img src="assets/open-lock.svg"/>
+              </button>
           </section>
-          <section class="swatchDisplayContainer">
-            <section class="large-swatch-5"></section>
-            <section class="hex-lock-5">#ffffff
-              <img class="view-open-lock" src="assets/open-lock.svg" alt="unlock icon">
-              <img class="view-lock hidden" src="assets/lock.svg" alt="unlock icon">
-            </section>
+
+          <section class="colour">
+              <input type="text" class="colour-input" value="#000000" />
+              <button class="lock-toggle">
+                <img src="assets/open-lock.svg"/>
+              </button>
           </section>
         </section>
-<!-- Third block with 2 buttons (New Palette and Save Palette)         -->
+
         <section class="button-container">
-          <button class="new-palette-button" type="button">New Palette</button>
+          <button class="generator-button" type="button">New Palette</button>
           <button class="save-palette-button" type="button">Save Palette</button>
         </section>
-      </section>
       </main>
 
-<!-- Container for divider between main and aside sections -->
-<section class="container">
-  <div class="roller">
-    <div class="handle"></div>
-  </div>
-  <div class="paint"></div>
-</section>
+<!-- Container for paint roller divider between main and aside sections -->
+      <section class="container">
+        <div class="roller">
+          <div class="handle"></div>
+        </div>
+        <div class="paint"></div>
+      </section>
 
 <!-- Side block with saved palettes -->
       <aside class="saved-display-container">
@@ -94,8 +92,8 @@
             </section>
           </section>
       </aside>
-      <script src="./scripts.js" async></script>
-      <script src="./palette.js" async></script>
-      <script src="./color.js" async></script>
+      <script src="./src/scripts.js" async></script>
+      <script src="./src/palette.js" async></script>
+      <script src="./src/color.js" async></script>
     </body>
 </html>

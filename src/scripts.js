@@ -41,9 +41,19 @@ class Colour {
   }
 }
 
+class Palette {
+  constructor(colors) {
+    this.id = Date.now();
+    this.colors = colors || [];
+
+  }
+}
+
 const colour_elements = document.querySelectorAll('.colours .colour');
 
 const colours = [];
+const currentPalette = new Palette(colours);
+currentPalette.colours = [];
 
 for (let i=0; i < colour_elements.length; i++) {
   const colour_element = colour_elements[i];
@@ -61,12 +71,20 @@ for (let i=0; i < colour_elements.length; i++) {
 
 
   colour.generateHex();
-  colours.push(colour);
+  currentPalette.colours.push(colour);
+  console.log(currentPalette);
 }
 
+//const savedPalettes = document.querySelector('.saved-palettes-section');
+
+//function savedPalettesSection() {
+  //savedPalettes.innerHTML = '';
+  //for (var i = 0; i < currentPalette.colours.length; i++);
+//}
+
 document.querySelector(".generator-button").addEventListener("click", () => {
-  for (let i=0; i < colours.length; i++) {
-    colours[i].generateHex();
+  for (let i=0; i < currentPalette.colours.length; i++) {
+    currentPalette.colours[i].generateHex();
   }
 });
 

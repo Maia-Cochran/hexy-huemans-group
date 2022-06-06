@@ -1,3 +1,4 @@
+//Class Section
 class Colour {
   constructor(hex, element) {
     this.hex = hex;
@@ -48,7 +49,7 @@ class Palette {
 
   }
 }
-
+//Query Selectors & Even Listeners
 const colour_elements = document.querySelectorAll('.colours .colour');
 const savedPalettes = document.querySelector('.saved-palettes-section');
 const savedPaletteButton = document.querySelector(".save-palette-button");
@@ -60,6 +61,8 @@ const currentPalette = new Palette(colours);
 savedPaletteButton.addEventListener('click', savePalette);
 savedPalettes.addEventListener('click', deleteSaved);
 
+
+//Data Model & DOM Functions
 document.querySelector(".generator-button").addEventListener("click", () => {
   for (let i=0; i < currentPalette.colors.length; i++) {
     currentPalette.colors[i].generateHex();
@@ -67,40 +70,30 @@ document.querySelector(".generator-button").addEventListener("click", () => {
   }
 });
 
-document.addEventListener('keypress', (e) => {
-    if (e.code.toLowerCase() === "space") {
-      document.querySelector(".generator-button").click();
-  }
-})
+  for (let i=0; i < colour_elements.length; i++) {
+    const colour_element = colour_elements[i];
+
+    const input = colour_element.querySelector(".colour-input");
+    const lock_toggle = colour_element.querySelector(".lock-toggle");
+
+    const hex = input.value;
+
+    const colour = new Colour(hex, colour_element);
+
+    input.addEventListener('input', (e) => colour.setHex(e.target.value));
+    lock_toggle.addEventListener('click', () => colour.toggleLocked());
 
 
-for (let i=0; i < colour_elements.length; i++) {
-  const colour_element = colour_elements[i];
-
-  const input = colour_element.querySelector(".colour-input");
-  const lock_toggle = colour_element.querySelector(".lock-toggle");
-
-
-  const hex = input.value;
-
-  const colour = new Colour(hex, colour_element);
-
-  input.addEventListener('input', (e) => colour.setHex(e.target.value));
-  lock_toggle.addEventListener('click', () => colour.toggleLocked());
-
-
-  colour.generateHex();
-  currentPalette.colors.push(colour);
+    colour.generateHex();
+    currentPalette.colors.push(colour);
 }
 
 function savePalette() {
   savedPalette.push(currentPalette);
   savedPalettesSection();
-  //currentPalette = new Palette();
 }
 
 function savedPalettesSection() {
-  //savedPalettes.innerHTML = '';
     savedPalettes.innerHTML +=
     `<section class="saved-palette">
       <section class="swatch-small" style='background-color:${currentPalette.colors[0].hex}'></section>
@@ -119,7 +112,6 @@ function deleteSaved(event){
   for(let i = 0; i < savedPalette.length; i++){
     if(savedPalette[i].id == event.target.parentElement.id){
     savedPalette.splice(i, 1);
-    //savePalette();
     return savedPalette;
     }
   }

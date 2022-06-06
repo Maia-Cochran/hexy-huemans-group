@@ -50,10 +50,29 @@ class Palette {
 }
 
 const colour_elements = document.querySelectorAll('.colours .colour');
+const savedPalettes = document.querySelector('.saved-palettes-section');
+const savedPaletteButton = document.querySelector(".save-palette-button");
 
+const savedPalette = [];
 const colours = [];
 const currentPalette = new Palette(colours);
-currentPalette.colours = [];
+
+savedPaletteButton.addEventListener('click', savePalette);
+savedPalettes.addEventListener('click', deleteSaved);
+
+document.querySelector(".generator-button").addEventListener("click", () => {
+  for (let i=0; i < currentPalette.colors.length; i++) {
+    currentPalette.colors[i].generateHex();
+    console.log(currentPalette);
+  }
+});
+
+document.addEventListener('keypress', (e) => {
+    if (e.code.toLowerCase() === "space") {
+      document.querySelector(".generator-button").click();
+  }
+})
+
 
 for (let i=0; i < colour_elements.length; i++) {
   const colour_element = colour_elements[i];
@@ -71,25 +90,37 @@ for (let i=0; i < colour_elements.length; i++) {
 
 
   colour.generateHex();
-  currentPalette.colours.push(colour);
-  console.log(currentPalette);
+  currentPalette.colors.push(colour);
 }
 
-//const savedPalettes = document.querySelector('.saved-palettes-section');
+function savePalette() {
+  savedPalette.push(currentPalette);
+  savedPalettesSection();
+  //currentPalette = new Palette();
+}
 
-//function savedPalettesSection() {
+function savedPalettesSection() {
   //savedPalettes.innerHTML = '';
-  //for (var i = 0; i < currentPalette.colours.length; i++);
-//}
+    savedPalettes.innerHTML +=
+    `<section class="saved-palette">
+      <section class="swatch-small" style='background-color:${currentPalette.colors[0].hex}'></section>
+      <section class="swatch-small" style='background-color:${currentPalette.colors[1].hex}'></section>
+      <section class="swatch-small" style='background-color:${currentPalette.colors[2].hex}'></section>
+      <section class="swatch-small" style='background-color:${currentPalette.colors[3].hex}'></section>
+      <section class="swatch-small" style='background-color:${currentPalette.colors[4].hex}'></section>
+      <img class="trashBin" src="assets/trashimg.svg" alt="delete icon">
+    </section>`;
+}
 
-document.querySelector(".generator-button").addEventListener("click", () => {
-  for (let i=0; i < currentPalette.colours.length; i++) {
-    currentPalette.colours[i].generateHex();
+function deleteSaved(event){
+  if (event.target.classList.contains("trashBin")) {
+    event.target.closest("section").remove();
   }
-});
-
-document.addEventListener('keypress', (e) => {
-    if (e.code.toLowerCase() === "space") {
-      document.querySelector(".generator-button").click();
+  for(let i = 0; i < savedPalette.length; i++){
+    if(savedPalette[i].id == event.target.parentElement.id){
+    savedPalette.splice(i, 1);
+    //savePalette();
+    return savedPalette;
+    }
   }
-})
+}

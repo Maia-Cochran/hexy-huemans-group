@@ -231,6 +231,25 @@ input {
 }
 
 /* 👇🏼 Aside section with saved palettes */
+.saved-palette {
+  height: 100px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.swatch-small {
+  height: 30px;
+  width: 30px;
+}
+
+.trashBin {
+  cursor: pointer;
+  height: 30px;
+  width: 30px;
+}
+
 aside {
   display: flex;
   flex-direction: column;
@@ -241,7 +260,7 @@ aside {
   padding: 40px;
 }
 
-.trashBin {
+/*.trashBin {
   width: 10%;
   height: auto;
-}
+}*/
